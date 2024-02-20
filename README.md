@@ -37,3 +37,18 @@ docker-compose down
 
 ## API docs
 Visit http://127.0.0.1:8000/docs to view the API documentation.
+
+## Testing the APIs  
+  
+You can test the APIs using tools like `curl`, Postman, or directly in your web browser.  
+  
+### Testing the Hello World API  
+  
+The Hello World API is a simple GET request that returns a "Hello, World!" message. It requires basic authentication. The default username is "user" and the password is "pass".  
+  
+#### Using curl  
+  
+To test the Hello World API using `curl`, run the following command in your terminal:  
+  
+```bash  
+curl -u user:pass http://127.0.0.1:8000/hello  
