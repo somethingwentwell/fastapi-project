@@ -1,0 +1,17 @@
+# General  
+__pycache__/  
+*.pyc  
+*.pyo  
+*.pyd  
+*.log  
+  
+# Virtual environment  
+venv/  
+  
+# VS Code  
+.vscode/  
+  
+# Docker  
+Dockerfile  
+docker-compose.yml  
+*.env  
