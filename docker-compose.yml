@@ -1,0 +1,27 @@
+version: "3.9"
+services:
+
+  vision-api:
+    image: warching/fastapi
+    ports:
+      - "8000:80"
+    command:
+      - /bin/bash
+      - -c
+      - |
+          pip install -r requirements.txt
+          uvicorn main:app --reload --host 0.0.0.0 --port 80
+    env_file:
+      - .env
+    volumes:
+      - ./main.py:/app/main.py
+      - ./requirements.txt:/app/requirements.txt
+    networks:
+      - api-network
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    deploy:
+      replicas: 1
+
+networks:
+  api-network:
