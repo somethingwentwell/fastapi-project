@@ -1,6 +1,5 @@
 version: "3.9"
 services:
-
   vision-api:
     image: warching/fastapi
     ports:
@@ -9,13 +8,15 @@ services:
       - /bin/bash
       - -c
       - |
-          pip install -r requirements.txt
-          uvicorn main:app --reload --host 0.0.0.0 --port 80
+        pip install -r requirements.txt
+        uvicorn main:app --reload --host 0.0.0.0 --port 80
     env_file:
       - .env
     volumes:
       - ./main.py:/app/main.py
       - ./requirements.txt:/app/requirements.txt
+      - ./api:/app/api
+      - ./util:/app/util
     networks:
       - api-network
     extra_hosts:
